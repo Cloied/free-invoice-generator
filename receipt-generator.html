@@ -1,12 +1,12 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Free Invoice Generator – no signup, print to PDF</title>
-<link rel="canonical" href="https://moneylab-djib.github.io/free-invoice-generator/">
+<title>Free Receipt Template – free, no signup, print to PDF</title>
+<link rel="canonical" href="https://moneylab-djib.github.io/free-invoice-generator/receipt-generator.html">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://moneylab-djib.github.io/free-invoice-generator/">
-<meta property="og:title" content="Free Invoice Generator – no signup, print to PDF">
+<meta property="og:url" content="https://moneylab-djib.github.io/free-invoice-generator/receipt-generator.html">
+<meta property="og:title" content="Free Receipt Template – free, no signup, print to PDF">
 <meta property="og:description" content="Make a clean invoice in your browser. No signup, no watermark, data stays on your device.">
 <meta name="twitter:card" content="summary">
-<meta name="description" content="Make a clean invoice in your browser. No signup, no watermark, data stays on your device. Print or save as PDF.">
+<meta name="description" content="Free free receipt template for small businesses and sellers. Preloaded example lines, no signup, no watermark, saved in your browser. Print or save as PDF.">
 <style>
 :root{--a:#4f46e5;--a2:#eef2ff;--t:#1e293b;--m:#64748b;--b:#e2e8f0}
 *{box-sizing:border-box}
@@ -62,7 +62,7 @@ footer{text-align:center;color:var(--m);font-size:12px;padding:8px 16px 32px}
 <header><div class="w"><div class="bar">
 <svg class="logo" viewBox="0 0 40 40"><rect width="40" height="40" rx="10" fill="#4f46e5"/><path d="M12 9h12l6 6v16H12z" fill="#fff"/><path d="M24 9v6h6" fill="#c7d2fe"/><path d="M16 21h10M16 25h10M16 29h6" stroke="#4f46e5" stroke-width="2" stroke-linecap="round"/></svg>
 <div><b>InvoiceKit</b><span>Free invoice generator for freelancers</span></div></div>
-<div class="hero"><h1>Create a professional invoice in 30 seconds</h1><p>Free, private, and instant. Fill in the fields, pick your colour, then save as PDF. No account, no watermark, nothing uploaded.</p></div>
+<div class="hero"><h1>Free Receipt Template</h1><p>Made for small businesses and sellers. Example lines are preloaded: replace them with your own. Fill in the fields, pick your colour, then save as PDF. No account, no watermark, nothing uploaded.</p></div>
 <div class="badges"><i>No signup</i><i>No watermark</i><i>Data stays in your browser</i><i>Print → Save as PDF</i></div></div></header>
 <main class="w">
 <div class="tool no"><label>Accent <input type="color" id="col" value="#4f46e5" oninput="setCol(this.value)"></label><label class="btn add" style="cursor:pointer">Add your logo<input type="file" id="lg" accept="image/*" hidden onchange="logo(this)"></label><button class="btn add" onclick="clr()">Clear</button><span id="sv">Auto-saved on this device</span></div>
@@ -80,20 +80,20 @@ footer{text-align:center;color:var(--m);font-size:12px;padding:8px 16px 32px}
 </div>
 <div class="act no"><button class="btn pri" onclick="window.print()">Print / Save as PDF</button></div>
 </main>
-<section class="info w no" style="max-width:828px"><h2>Free invoice generator for freelancers</h2><h3>Is it really free?</h3><p>Yes. No signup, no watermark, no limits.</p><h3>Where is my data stored?</h3><p>Only in your browser on this device (auto-saved locally). Nothing is sent to a server.</p><h3>How do I get a PDF?</h3><p>Click Print / Save as PDF and choose “Save as PDF” as the destination.</p><h3>Can I use my own logo and colour?</h3><p>Yes: pick an accent colour and add your logo above the invoice.</p><h3>Templates by profession</h3><p class="more"><a href="freelance-designer-invoice.html">Designer</a><a href="consultant-invoice.html">Consultant</a><a href="photographer-invoice.html">Photographer</a><a href="contractor-invoice.html">Contractor</a><a href="cleaning-service-invoice.html">Cleaning service</a><a href="tutor-invoice.html">Tutor</a><a href="receipt-generator.html">Receipt</a><a href="quote-estimate-template.html">Quote / estimate</a></p></section>
+<section class="info w no" style="max-width:828px"><h2>How to write an invoice as one of small businesses and sellers</h2><p>A receipt proves a payment already made, unlike an invoice that requests one. Use this page, add “PAID” in the notes and the payment method.</p><h3>Tip</h3><p>Write “Paid in full – thank you” plus the payment method (cash, card, transfer) and date in the notes.</p><h3>Other templates</h3><p class="more"><a href="freelance-designer-invoice.html">Freelance Designer Invoice Template</a><a href="consultant-invoice.html">Consultant Invoice Template</a><a href="photographer-invoice.html">Photographer Invoice Template</a><a href="contractor-invoice.html">Contractor & Handyman Invoice Template</a><a href="cleaning-service-invoice.html">Cleaning Service Invoice Template</a><a href="tutor-invoice.html">Private Tutor Invoice Template</a><a href="receipt-generator.html">Free Receipt Template</a><a href="quote-estimate-template.html">Free Quote & Estimate Template</a></p></section>
 <footer>Anonymous visit counter (GoatCounter), no cookies; your invoice data never leaves your browser.</footer>
 <script>
 var $=function(i){return document.getElementById(i)};
 $('date').valueAsDate=new Date();
 function add(){var r=document.createElement('tr');r.className='r';r.innerHTML='<td><input placeholder="Description" aria-label="Description"></td><td class="n"><input type="number" value="1" min="0" step="any" aria-label="Qty" oninput="calc()" style="text-align:right"></td><td class="n"><input type="number" value="0" min="0" step="any" aria-label="Price" oninput="calc()" style="text-align:right"></td><td class="amt">0.00</td><td class="no"><button class="x" aria-label="Remove line" onclick="this.closest(\'tr\').remove();calc()">×</button></td>';document.querySelector('#t tbody').appendChild(r);}
 function calc(){var s=0,c=$('cur').value;document.querySelectorAll('#t tbody tr').forEach(function(r){var i=r.querySelectorAll('input'),v=(+i[1].value)*(+i[2].value);r.querySelector('.amt').textContent=c+v.toFixed(2);s+=v});var t=s*(+$('tax').value)/100;$('sub').textContent=c+s.toFixed(2);$('tx').textContent=c+t.toFixed(2);$('tot').textContent=c+(s+t).toFixed(2);}
-add();add();calc();
+add();var q=document.querySelector('#t tbody tr:last-child').querySelectorAll('input');q[0].value='Item or service sold';q[1].value=1;q[2].value=50;calc();
 
 function setCol(c){document.documentElement.style.setProperty('--a',c);document.documentElement.style.setProperty('--a2',c+'1a');save()}
 function logo(i){var f=i.files[0];if(!f||f.size>600000){alert('Please choose an image under 600 KB');return}var r=new FileReader();r.onload=function(){$('lgi').src=r.result;$('lgi').style.display='block';save()};r.readAsDataURL(f)}
-function save(){try{var d={f:{},rows:[],col:$('col').value,lg:$('lgi').style.display=='block'?$('lgi').src:''};['from','to','num','date','due','cur','tax','notes'].forEach(function(k){d.f[k]=$(k).value});document.querySelectorAll('#t tbody tr').forEach(function(r){var i=r.querySelectorAll('input');d.rows.push([i[0].value,i[1].value,i[2].value])});localStorage.setItem('inv1',JSON.stringify(d))}catch(e){}}
-function load(){try{var d=JSON.parse(localStorage.getItem('inv1'));if(!d)return;for(var k in d.f)$(k).value=d.f[k];$('col').value=d.col;setCol(d.col);if(d.lg){$('lgi').src=d.lg;$('lgi').style.display='block'}document.querySelector('#t tbody').innerHTML='';d.rows.forEach(function(x){add();var i=document.querySelector('#t tbody tr:last-child').querySelectorAll('input');i[0].value=x[0];i[1].value=x[1];i[2].value=x[2]});if(!d.rows.length)add();calc()}catch(e){}}
-function clr(){if(confirm('Clear everything?')){localStorage.removeItem('inv1');location.reload()}}
+function save(){try{var d={f:{},rows:[],col:$('col').value,lg:$('lgi').style.display=='block'?$('lgi').src:''};['from','to','num','date','due','cur','tax','notes'].forEach(function(k){d.f[k]=$(k).value});document.querySelectorAll('#t tbody tr').forEach(function(r){var i=r.querySelectorAll('input');d.rows.push([i[0].value,i[1].value,i[2].value])});localStorage.setItem('inv-receipt-generator',JSON.stringify(d))}catch(e){}}
+function load(){try{var d=JSON.parse(localStorage.getItem('inv-receipt-generator'));if(!d)return;for(var k in d.f)$(k).value=d.f[k];$('col').value=d.col;setCol(d.col);if(d.lg){$('lgi').src=d.lg;$('lgi').style.display='block'}document.querySelector('#t tbody').innerHTML='';d.rows.forEach(function(x){add();var i=document.querySelector('#t tbody tr:last-child').querySelectorAll('input');i[0].value=x[0];i[1].value=x[1];i[2].value=x[2]});if(!d.rows.length)add();calc()}catch(e){}}
+function clr(){if(confirm('Clear everything?')){localStorage.removeItem('inv-receipt-generator');location.reload()}}
 document.addEventListener('input',save);document.addEventListener('click',function(){setTimeout(save,50)});
 load();
 </script>
