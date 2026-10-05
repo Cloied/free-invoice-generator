@@ -1,0 +1,20 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Free Invoice Generator – no signup, print to PDF</title>
+<meta name="description" content="Make a clean invoice in your browser. No signup, no watermark, data stays on your device. Print or save as PDF.">
+<style>body{font-family:system-ui,sans-serif;max-width:800px;margin:20px auto;padding:0 12px}input,textarea{width:100%;padding:6px;box-sizing:border-box}
+table{width:100%;border-collapse:collapse;margin:10px 0}td,th{border-bottom:1px solid #ddd;padding:4px}.row{display:flex;gap:10px}.row>div{flex:1}
+button{padding:8px 14px;margin:4px 0}@media print{.no{display:none}input,textarea{border:0}}</style></head><body>
+<h1>Free Invoice Generator</h1><p class="no">No signup. No watermark. Data never leaves your browser. Fill in, then Print → Save as PDF.</p>
+<div class="row"><div><label>From</label><textarea id="from" rows="3"></textarea></div><div><label>Bill to</label><textarea id="to" rows="3"></textarea></div></div>
+<div class="row"><div><label>Invoice #</label><input id="num" value="001"></div><div><label>Date</label><input id="date" type="date"></div><div><label>Currency</label><input id="cur" value="$"></div><div><label>Tax %</label><input id="tax" type="number" value="0" oninput="calc()"></div></div>
+<table id="t"><thead><tr><th>Description</th><th width=70>Qty</th><th width=100>Price</th><th width=100>Total</th></tr></thead><tbody></tbody></table>
+<button class="no" onclick="add()">+ Add line</button>
+<h3 style="text-align:right">Subtotal: <span id="sub">0.00</span> | Tax: <span id="tx">0.00</span> | Total: <span id="tot">0.00</span></h3>
+<label>Notes / payment details</label><textarea id="notes" rows="3"></textarea>
+<button class="no" onclick="window.print()">Print / Save as PDF</button>
+<script>
+document.getElementById('date').valueAsDate=new Date();
+function add(){var r=document.createElement('tr');r.innerHTML='<td><input></td><td><input type=number value=1 oninput="calc()"></td><td><input type=number value=0 oninput="calc()"></td><td class=l>0.00</td>';document.querySelector('#t tbody').appendChild(r);}
+function calc(){var s=0;document.querySelectorAll('#t tbody tr').forEach(r=>{var i=r.querySelectorAll('input'),v=(+i[1].value)*(+i[2].value);r.querySelector('.l').textContent=v.toFixed(2);s+=v});var t=s*(+document.getElementById('tax').value)/100;sub.textContent=s.toFixed(2);tx.textContent=t.toFixed(2);tot.textContent=(s+t).toFixed(2);}
+add();
+</script></body></html>
