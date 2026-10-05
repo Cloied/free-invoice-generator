@@ -1,8 +1,8 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Free Invoice Generator – no signup, print to PDF</title>
-<link rel="canonical" href="https://cloied.github.io/free-invoice-generator/">
+<link rel="canonical" href="https://moneylab-djib.github.io/free-invoice-generator/">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://cloied.github.io/free-invoice-generator/">
+<meta property="og:url" content="https://moneylab-djib.github.io/free-invoice-generator/">
 <meta property="og:title" content="Free Invoice Generator – no signup, print to PDF">
 <meta property="og:description" content="Make a clean invoice in your browser. No signup, no watermark, data stays on your device.">
 <meta name="twitter:card" content="summary">
@@ -22,7 +22,7 @@ main{padding:24px 16px 8px}
 .card{background:#fff;border-radius:14px;box-shadow:0 1px 3px rgba(15,23,42,.08),0 8px 24px rgba(15,23,42,.05);padding:32px;margin-bottom:24px;border-top:6px solid var(--a)}
 .top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:28px;flex-wrap:wrap}
 .top h2{margin:0;font-size:32px;letter-spacing:2px;color:var(--a)}
-.meta{display:grid;grid-template-columns:auto 130px;gap:8px 10px;align-items:center;font-size:14px}
+.meta{display:grid;grid-template-columns:auto minmax(0,130px);gap:8px 10px;align-items:center;font-size:14px}
 .meta label{color:var(--m);text-align:right}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:28px}
 label.l{display:block;font-size:12px;text-transform:uppercase;letter-spacing:1px;color:var(--m);font-weight:700;margin-bottom:6px}
@@ -56,7 +56,7 @@ footer{text-align:center;color:var(--m);font-size:12px;padding:8px 16px 32px}
  th{-webkit-print-color-adjust:exact;print-color-adjust:exact}
  input,textarea{border:0!important;padding:2px 0;resize:none;outline:none}
  textarea{overflow:hidden}.x{display:none}
- .tax input{width:auto}
+ .tax input{width:3ch;-moz-appearance:textfield}.tax input::-webkit-inner-spin-button{display:none}.tot div span:last-child{white-space:nowrap}
 }
 </style></head><body>
 <header><div class="w"><div class="bar">
