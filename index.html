@@ -7,11 +7,11 @@
 <meta property="og:description" content="Make a clean invoice in your browser. No signup, no watermark, data stays on your device.">
 <meta name="twitter:card" content="summary">
 <meta name="description" content="Make a clean invoice in your browser. No signup, no watermark, data stays on your device. Print or save as PDF.">
-<style>
-:root{--a:#4f46e5;--a2:#eef2ff;--t:#1e293b;--m:#64748b;--b:#e2e8f0}
+<link rel="icon" href="favicon.png"><meta property="og:image" content="https://moneylab-djib.github.io/free-invoice-generator/og.png"><style>
+:root{--a:#0f6b5c;--a2:#e4f3ef;--t:#1e293b;--m:#526072;--b:#e2e8f0}
 *{box-sizing:border-box}
 body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:var(--t);background:#f1f5f9;line-height:1.5}
-header{background:linear-gradient(135deg,#312e81,#4f46e5 55%,#7c3aed);color:#fff}.bar span{color:#c7d2fe!important}.badges i{background:rgba(255,255,255,.15)!important;color:#fff!important}.hero{padding:8px 0 22px}.hero h1{font-size:clamp(26px,5vw,40px);line-height:1.15;margin:0 0 8px;max-width:640px}.hero p{margin:0;color:#e0e7ff;max-width:560px}
+header{background:linear-gradient(160deg,#0b3d34,#0f6b5c);color:#fff}.bar span{color:#cdeee6!important}.badges i{background:rgba(255,255,255,.15)!important;color:#fff!important}.hero{padding:8px 0 22px}.hero h1{font-size:clamp(26px,5vw,40px);line-height:1.15;margin:0 0 8px;max-width:640px}.hero p{margin:0;color:#e6f6f2;max-width:560px}
 .w{max-width:860px;margin:0 auto;padding:0 16px}
 .bar{display:flex;align-items:center;gap:12px;padding:16px 0}
 .logo{width:40px;height:40px;flex:none}
@@ -37,8 +37,8 @@ td.n,th.n{text-align:right}.amt{font-weight:600;text-align:right;padding-right:1
 .x{border:0;background:none;color:var(--m);cursor:pointer;font-size:18px;padding:4px 8px}
 .x:hover{color:#dc2626}
 .btn{font:inherit;font-weight:600;border:0;border-radius:10px;padding:11px 20px;cursor:pointer}
-.add{background:var(--a2);color:var(--a)}.pri{background:var(--a);color:#fff;box-shadow:0 4px 12px rgba(79,70,229,.35)}
-.add:hover{background:#e0e7ff}.pri:hover{background:#4338ca}
+.add{background:var(--a2);color:var(--a)}.pri{background:var(--a);color:#fff;box-shadow:0 4px 12px rgba(15,107,92,.35)}
+.add:hover{background:#cfe9e2}.pri:hover{background:#0b5247}
 .tot{margin-left:auto;width:300px;max-width:100%;margin-top:16px}
 .tot div{display:flex;justify-content:space-between;padding:6px 0;color:var(--m)}
 .tot .g{border-top:2px solid var(--t);margin-top:6px;padding-top:10px;font-size:20px;font-weight:700;color:var(--t)}
@@ -46,7 +46,7 @@ td.n,th.n{text-align:right}.amt{font-weight:600;text-align:right;padding-right:1
 .notes{margin-top:28px}
 .act{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:24px}
 footer{text-align:center;color:var(--m);font-size:12px;padding:8px 16px 32px}
-.tool{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:16px;font-size:14px;color:var(--m)}.tool label:first-child{display:flex;align-items:center;gap:8px;font-weight:600}.tool input[type=color]{width:38px;height:32px;padding:2px;cursor:pointer}.tool .btn{padding:8px 14px;font-size:14px}.info{background:#fff;border-radius:14px;padding:28px;margin-bottom:24px;box-shadow:0 1px 3px rgba(15,23,42,.08)}.info h2{margin-top:0}.info h3{margin:18px 0 4px;font-size:16px}.info p{margin:0;color:var(--m)}
+.tool{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:16px;font-size:14px;color:var(--m)}.tool label:first-child{display:flex;align-items:center;gap:8px;font-weight:600}.tool input[type=color]{width:44px;height:40px;padding:2px;cursor:pointer}.tool .btn{padding:8px 14px;font-size:14px}.info{background:#fff;border-radius:14px;padding:28px;margin-bottom:24px;box-shadow:0 1px 3px rgba(15,23,42,.08)}.info h2{margin-top:0}.info h3{margin:18px 0 4px;font-size:16px}.info p{margin:0;color:var(--m)}
 @media(max-width:620px){.card{padding:18px}.two{grid-template-columns:1fr}.top h2{font-size:26px}
  thead{display:none}tr.r{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:10px 0;border-bottom:1px solid var(--b)}
  tr.r td{border:0;padding:0}tr.r td:first-child{grid-column:1/3}tr.r td.amt{text-align:left;padding:8px 0 0}tr.r td:last-child{text-align:right}}
@@ -58,29 +58,38 @@ footer{text-align:center;color:var(--m);font-size:12px;padding:8px 16px 32px}
  textarea{overflow:hidden}.x{display:none}
  .tax input{width:3ch;-moz-appearance:textfield}.tax input::-webkit-inner-spin-button{display:none}.tot div span:last-child{white-space:nowrap}
 }
-.more a{display:inline-block;margin:4px 8px 4px 0;color:var(--a)}</style></head><body>
+.more a{display:inline-block;margin:4px 8px 4px 0;color:var(--a)}.tool label:first-child{color:var(--t)}#sv{color:var(--m)}.stamp{display:inline-block;transform:rotate(-4deg);border:2px solid #9be2d1;color:#d9fff5;padding:2px 10px;border-radius:6px;font-weight:800;letter-spacing:1px;font-size:13px;margin-bottom:10px;text-transform:uppercase}
+.card{border-top:0;border-radius:6px 6px 0 0;padding-bottom:44px;position:relative;box-shadow:0 1px 2px rgba(15,23,42,.1),0 14px 30px rgba(15,23,42,.08);-webkit-mask:none}
+.card::after{content:"";position:absolute;left:0;right:0;bottom:-10px;height:10px;background:linear-gradient(135deg,#fff 5px,transparent 0) 0 0/14px 10px,linear-gradient(225deg,#fff 5px,transparent 0) 0 0/14px 10px}
+.btn:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid #f59e0b;outline-offset:2px}
+.x{min-width:40px;min-height:40px}.tax input{min-height:40px}.tool .btn{min-height:40px}.more a{padding:8px 0}
+@media print{.card::after{display:none}.stamp{display:none}}.stamp2{position:absolute;top:22px;right:22px;transform:rotate(-6deg);border:2px solid var(--a);color:var(--a);opacity:.55;padding:2px 10px;border-radius:6px;font-weight:800;letter-spacing:1px;font-size:12px;text-transform:uppercase;pointer-events:none}
+.card::after{height:14px;bottom:-14px;background:linear-gradient(135deg,#fff 7px,transparent 0) 0 0/20px 14px,linear-gradient(225deg,#fff 7px,transparent 0) 0 0/20px 14px}
+.meta{grid-template-columns:auto minmax(0,150px)}.tool{padding-top:16px}
+@media(max-width:620px){.act{position:sticky;bottom:0;background:linear-gradient(transparent,#f1f5f9 30%);padding:16px 0 calc(12px + env(safe-area-inset-bottom));margin:0;z-index:5}.act .btn{width:100%;min-height:52px}.stamp2{top:10px;right:10px}}
+@media print{.stamp2{display:none}}</style></head><body>
 <header><div class="w"><div class="bar">
-<svg class="logo" viewBox="0 0 40 40"><rect width="40" height="40" rx="10" fill="#4f46e5"/><path d="M12 9h12l6 6v16H12z" fill="#fff"/><path d="M24 9v6h6" fill="#c7d2fe"/><path d="M16 21h10M16 25h10M16 29h6" stroke="#4f46e5" stroke-width="2" stroke-linecap="round"/></svg>
+<svg class="logo" viewBox="0 0 40 40"><rect width="40" height="40" rx="10" fill="#0f6b5c"/><path d="M12 9h12l6 6v16H12z" fill="#fff"/><path d="M24 9v6h6" fill="#c7d2fe"/><path d="M16 21h10M16 25h10M16 29h6" stroke="#0f6b5c" stroke-width="2" stroke-linecap="round"/></svg>
 <div><b>InvoiceKit</b><span>Free invoice generator for freelancers</span></div></div>
-<div class="hero"><h1>Create a professional invoice in 30 seconds</h1><p>Free, private, and instant. Fill in the fields, pick your colour, then save as PDF. No account, no watermark, nothing uploaded.</p></div>
-<div class="badges"><i>No signup</i><i>No watermark</i><i>Data stays in your browser</i><i>Print → Save as PDF</i></div></div></header>
+<div class="hero"><h1>Make an invoice in 60 seconds.</h1><p>Free for freelancers. Fill in the fields, save as PDF. Your data stays in your browser: nothing is uploaded.</p></div>
+</div></header>
 <main class="w">
-<div class="tool no"><label>Accent <input type="color" id="col" value="#4f46e5" oninput="setCol(this.value)"></label><label class="btn add" style="cursor:pointer">Add your logo<input type="file" id="lg" accept="image/*" hidden onchange="logo(this)"></label><button class="btn add" onclick="clr()">Clear</button><span id="sv">Auto-saved on this device</span></div>
-<div class="card">
+<div class="tool no"><label>Accent <input type="color" id="col" value="#0f6b5c" oninput="setCol(this.value)"></label><label class="btn add" style="cursor:pointer">Add your logo<input type="file" id="lg" accept="image/*" hidden onchange="logo(this)"></label><button class="btn add" onclick="clr()">Clear</button><span id="sv">Auto-saved on this device</span></div>
+<div class="card"><span class="stamp2" aria-hidden="true">No signup</span>
 <div class="top"><div><img id="lgi" alt="" style="display:none;max-height:64px;max-width:180px;margin-bottom:8px"><h2>INVOICE</h2></div>
 <div class="meta"><label for="num">Invoice #</label><input id="num" value="001"><label for="date">Date</label><input id="date" type="date"><label for="due">Due date</label><input id="due" type="date"><label for="cur">Currency</label><input id="cur" value="$" oninput="calc()" maxlength="4"></div></div>
 <div class="two"><div><label class="l" for="from">From</label><textarea id="from" rows="4" placeholder="Your name / business&#10;Address&#10;Email"></textarea></div>
 <div><label class="l" for="to">Bill to</label><textarea id="to" rows="4" placeholder="Client name&#10;Address&#10;Email"></textarea></div></div>
-<table id="t"><thead><tr><th>Description</th><th class="n" width="80">Qty</th><th class="n" width="110">Price</th><th class="n" width="110">Total</th><th class="no" width="36"></th></tr></thead><tbody></tbody></table>
+<table id="t"><thead><tr><th>Description</th><th class="n" width="80">Qty</th><th class="n" width="110">Price</th><th class="n" width="110">Total</th><th class="no" width="36"><span style="position:absolute;left:-9999px">Remove</span></th></tr></thead><tbody></tbody></table>
 <button class="btn add no" onclick="add()">+ Add line</button>
 <div class="tot"><div><span>Subtotal</span><span id="sub">0.00</span></div>
-<div><span class="tax">Tax <input id="tax" type="number" value="0" min="0" step="any" oninput="calc()"> %</span><span id="tx">0.00</span></div>
+<div><span class="tax">Tax <input id="tax" aria-label="Tax percent" type="number" value="0" min="0" step="any" oninput="calc()"> %</span><span id="tx">0.00</span></div>
 <div class="g"><span>Total</span><span id="tot">0.00</span></div></div>
 <div class="notes"><label class="l" for="notes">Notes / payment details</label><textarea id="notes" rows="3" placeholder="Bank details, payment terms, thank-you note…"></textarea></div>
 </div>
 <div class="act no"><button class="btn pri" onclick="window.print()">Print / Save as PDF</button></div>
 </main>
-<section class="info w no" style="max-width:828px"><h2>Free invoice generator for freelancers</h2><h3>Is it really free?</h3><p>Yes. No signup, no watermark, no limits.</p><h3>Where is my data stored?</h3><p>Only in your browser on this device (auto-saved locally). Nothing is sent to a server.</p><h3>How do I get a PDF?</h3><p>Click Print / Save as PDF and choose “Save as PDF” as the destination.</p><h3>Can I use my own logo and colour?</h3><p>Yes: pick an accent colour and add your logo above the invoice.</p><h3>Templates by profession</h3><p class="more"><a href="freelance-designer-invoice.html">Designer</a><a href="consultant-invoice.html">Consultant</a><a href="photographer-invoice.html">Photographer</a><a href="contractor-invoice.html">Contractor</a><a href="cleaning-service-invoice.html">Cleaning service</a><a href="tutor-invoice.html">Tutor</a><a href="receipt-generator.html">Receipt</a><a href="quote-estimate-template.html">Quote / estimate</a></p></section>
+<section class="info w no" role="region" aria-label="About" style="max-width:828px"><h2>Free invoice generator for freelancers</h2><h3>Is it really free?</h3><p>Yes. No signup, no watermark, no limits.</p><h3>Where is my data stored?</h3><p>Only in your browser on this device (auto-saved locally). Nothing is sent to a server.</p><h3>How do I get a PDF?</h3><p>Click Print / Save as PDF and choose “Save as PDF” as the destination.</p><h3>Can I use my own logo and colour?</h3><p>Yes: pick an accent colour and add your logo above the invoice.</p><h3>Templates by profession</h3><p class="more"><a href="freelance-designer-invoice.html">Designer</a><a href="consultant-invoice.html">Consultant</a><a href="photographer-invoice.html">Photographer</a><a href="contractor-invoice.html">Contractor</a><a href="cleaning-service-invoice.html">Cleaning service</a><a href="tutor-invoice.html">Tutor</a><a href="receipt-generator.html">Receipt</a><a href="quote-estimate-template.html">Quote / estimate</a></p></section>
 <footer>Anonymous visit counter (GoatCounter), no cookies; your invoice data never leaves your browser.</footer>
 <script>
 var $=function(i){return document.getElementById(i)};
